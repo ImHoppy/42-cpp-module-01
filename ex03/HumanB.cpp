@@ -9,5 +9,8 @@ void	HumanB::setWeapon(Weapon & weapon) {
 }
 
 void	HumanB::attack() {
-	std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
+	if (!_weapon)
+		std::cerr << "Error: no weapon provided" << std::endl;
+	else
+		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
 }
